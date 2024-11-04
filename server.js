@@ -4,6 +4,7 @@ const app = express();
 
 app.use(express.json())
 
+//Get set
 app.get('./sets', (req,res) => {
     readSets((err, rown) => {
         if(err){
@@ -15,6 +16,7 @@ app.get('./sets', (req,res) => {
     })
 })
 
+//Get sets
 app.post('./sets',(req,res) => {
     const {name,description} = req.body
     createSets(name, description, (err, data) => {
@@ -26,10 +28,11 @@ app.post('./sets',(req,res) => {
     })
 })
 
+//Get single set
 app.put('./sets/:id', (req,res) => {
     const {name, description} = req.body;
-    updateSets(req.params.id, name, description, (err){
-        if(err){
+    updateSets(req.params.id, name, description, (err) => {
+        if(err) {
             res.status(500).send(err.message)
         }else{
             res.status(200).send("Upadted set.")
@@ -37,6 +40,7 @@ app.put('./sets/:id', (req,res) => {
     })
 })
 
+//Delete set
 app.delete('/sets/:id', (req,res) => {
     deleteSets(req.param.id, (err) =>{
         if(err){
@@ -48,7 +52,7 @@ app.delete('/sets/:id', (req,res) => {
 )
 })
 
-
+//App port
 app.listen(3000, () => {
     console.log("Server is running.")
-})
+});

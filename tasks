@@ -1,0 +1,104 @@
+* Step 1: Initial Setup
+**Project Initialization
+
+**Create a new project directory.
+
+Initialize a version control system (Git) and connect it to a repository (GitHub, GitLab, etc.).
+
+**Set Up the Development Environment
+
+Install and configure your preferred full-stack framework (e.g., Django, Flask for Python; Express for Node.js; Ruby on Rails for Ruby).
+
+Install SQLite3 Database and set up your development environment to use it.
+
+***Step 2: Back-End Development
+**Design the Database Schema
+
+*Define tables for flashcards, sets, collections, users, ratings, and telemetry data.
+Flashcards:  id, quesiton, answer
+Sets: id, sets_type 
+user: id, user_name not null, user_type (admin, standard) not null
+Ratings: id, rate_type (five type star)
+Telemetry data: id, event_type, user_id FK, additional_info
+
+*Write SQL scripts or use ORM (Object-Relational Mapping) to create these tables.
+
+**Develop the API
+
+Define the endpoints based on the API specification provided.
+
+Implement CRUD (Create, Read, Update, Delete) operations for flashcards, sets, and collections.
+
+Implement user authentication and authorization mechanisms.
+
+**Implement Limitations
+
+Add logic to limit the creation of flashcard sets to 20 per day.
+
+Implement an admin interface to change this limit dynamically.
+
+***Step 3: Front-End Development
+**Set Up the Front-End Framework
+
+Choose a front-end framework (e.g., React, Angular, Vue.js).
+
+Initialize the front-end project and configure it to interact with the back-end API.
+
+**Create the User Interface
+
+Design the UI for browsing and creating flashcard collections and sets.
+
+Ensure the answer is hidden by default and only revealed by user input (e.g., clicking on the card).
+
+***Step 4: Integrate the Front-End with the Back-End
+Connect Front-End to API
+
+Use fetch or Axios to make API calls from the front-end to the back-end.
+
+Implement functions to handle data fetching, submission, and updating.
+
+***Step 5: Implement Future Milestones
+**Additional Features
+
+Add functionality to mark certain cards as hidden by individual students.
+
+Implement a rating system with reviews and a five-star rating system for card sets and collections.
+
+Develop a telemetry system to track quiz attempts and completion times.
+
+Implement AI-based recommendations for sets using collected telemetry data.
+
+***Step 6: Testing
+**Automated Testing
+
+**Write unit tests for both back-end and front-end components.
+
+**Implement end-to-end tests to simulate user interactions.
+
+**Use a testing framework (e.g., Jest for JavaScript, PyTest for Python) and set up continuous integration with GitHub Actions or Jenkins.
+
+***Manual Testing
+
+Conduct manual testing to ensure the application functions as expected.
+
+Test the user interface and API endpoints thoroughly.
+
+***Step 7: Documentation
+Document Your Code
+
+***Add comments and documentation to your code.
+
+Create API documentation to help other developers understand how to use the endpoints.
+
+Prepare a User Guide
+
+Write a user guide explaining how to use the application, create flashcard sets, and study them.
+
+Step 8: Deployment
+Deploy the Application
+
+Choose a hosting provider (e.g., Heroku, AWS, Azure).
+
+Set up the server environment and deploy both the front-end and back-end applications.
+
+Ensure the database is correctly configured and accessible.
