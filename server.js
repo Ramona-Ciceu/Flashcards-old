@@ -16,7 +16,7 @@ app.get('./sets', (req,res) => {
     })
 })
 
-//Get sets
+//Post sets
 app.post('./sets',(req,res) => {
     const {name,description} = req.body
     createSets(name, description, (err, data) => {
